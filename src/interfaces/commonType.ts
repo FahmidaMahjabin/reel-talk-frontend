@@ -8,3 +8,11 @@ export type Iresponse = {
   data: any;
   meta?: Imeta;
 };
+
+export type IDepartment = {
+  _id: string;
+  title: string;
+  createdAt: string;
+  updatedAt: string;
+  __v: number;
+};

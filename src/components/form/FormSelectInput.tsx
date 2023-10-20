@@ -15,6 +15,7 @@ type IInput = {
   size?: "large" | "small";
   options: IOption[];
   label?: string;
+  placeholder?: string;
 };
 export default function FormSelectInput({
   name,

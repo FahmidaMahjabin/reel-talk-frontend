@@ -3,7 +3,10 @@ export const storeUserInfo = ({ accessToken }: { accessToken: string }) => {
   if (!accessToken || typeof window === "undefined") return "";
   return localStorage.setItem("accessToken", accessToken);
 };
-
+export const setToLoaclStorage = (key: string, token: string) => {
+  if (!key || typeof window === "undefined") return "";
+  return localStorage.setItem(key, token);
+};
 export const getFromLocalStorage = (key: string) => {
   if (!key || typeof window === "undefined") {
     return "";

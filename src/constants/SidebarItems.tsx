@@ -15,6 +15,7 @@ import React from "react";
 import Link from "next/link";
 
 export default function SidebarItems(role: string) {
+  console.log("role:", role);
   const defaultSidebarItems: MenuProps["items"] = [
     {
       label: "profile",
@@ -35,12 +36,12 @@ export default function SidebarItems(role: string) {
 
   const sidebarForCommonAdmin: MenuProps["items"] = [
     {
-      label: <Link href={`${role}/manage_student`}>manage student</Link>,
+      label: <Link href={`/${role}/manage_student`}>manage student</Link>,
       key: `${role}/manage_student`,
       icon: <UserOutlined></UserOutlined>,
     },
     {
-      label: <Link href={`${role}/manage_faculty`}>manage faculty</Link>,
+      label: <Link href={`/${role}/manage_faculty`}>manage faculty</Link>,
       key: `${role}/manage_faculty`,
       icon: <UserOutlined></UserOutlined>,
     },

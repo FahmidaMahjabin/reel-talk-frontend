@@ -22,7 +22,7 @@ export const metaData: Metadata = {
 export default function Login() {
   const router = useRouter();
   const [logginInUser] = useUserLogInMutation();
-  // console.log("loggedInUser:", logginInUser);
+  console.log("loggedInUser:", logginInUser);
   const onsubmit: SubmitHandler<FormValues> = async (data) => {
     try {
       // console.log("data from login:", data);
