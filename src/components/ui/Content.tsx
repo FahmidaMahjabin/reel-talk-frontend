@@ -11,23 +11,5 @@ export default function ContentMain({
 }) {
   const role = "super-admin";
   const base = `${role}`;
-  return (
-    <Content style={{ minHeight: "100vh" }}>
-      <Header></Header>
-      <Breadcrum
-        items={[
-          {
-            label: `${base}`,
-            link: `/${base}`,
-          },
-          {
-            label: "student",
-            link: `/${base}/student`,
-          },
-        ]}
-      />
-
-      {children}
-    </Content>
-  );
+  return <Content style={{ minHeight: "100vh" }}>{children}</Content>;
 }
