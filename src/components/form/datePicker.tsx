@@ -9,6 +9,7 @@ type IInput = {
   value?: Dayjs;
   label?: string;
   size?: "middle" | "large";
+  picker?: "date" | "month" | "year";
   onChange?: (value1: Dayjs | null, value2: string) => void;
 };
 export default function DatePickerforUM({
@@ -16,6 +17,7 @@ export default function DatePickerforUM({
   size,
   value,
   label,
+  picker,
   onChange,
 }: IInput) {
   const { control, setValue } = useFormContext();
@@ -27,15 +29,20 @@ export default function DatePickerforUM({
 
   return (
     <>
-      <div>{label ? label : null}</div>
+      <div>
+        {label ? (
+          <h4 style={{ margin: "4px", display: "block" }}>{label} </h4>
+        ) : null}
+      </div>
       <Controller
         control={control}
         name={name}
         render={({ field }) => (
           <DatePicker
             onChange={handleChange}
-            value={dayjs(field.value) || null}
+            // value={dayjs(field.value)}
             size={size}
+            picker={picker}
           />
         )}
       />
