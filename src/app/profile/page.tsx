@@ -3,6 +3,7 @@ import Form from "@/components/form/Form";
 import FormInput from "@/components/form/FormInput";
 import DatePickerforUM from "@/components/form/datePicker";
 import ImageUpload from "@/components/form/imageUpload";
+import ButtonForRellTalk from "@/components/ui/ButtonForRellTalk";
 import { Button, Col, Flex, Row } from "antd";
 import TextArea from "antd/es/input/TextArea";
 import { Rowdies } from "next/font/google";
@@ -64,16 +65,7 @@ export default function ProfilePage() {
           </Col>
         </Row>
         <Flex justify="center" align="center" style={{ margin: "20px" }}>
-          <Button
-            style={{
-              backgroundColor: "yellow",
-              width: "30%",
-            }}
-            block
-            htmlType="submit"
-          >
-            Done
-          </Button>
+          <ButtonForRellTalk name="Done"></ButtonForRellTalk>
         </Flex>
       </Form>
     </div>
