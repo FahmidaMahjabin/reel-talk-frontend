@@ -64,7 +64,7 @@ export default function MoviesPage() {
       image: "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
     },
   ];
-  const addedmovies: IMovie[] = [];
+  const [addedmovies, setAddedmovies] = useState<IMovie[]>([]);
   const [totalSelectedmovie, setTotalSelectedmovie] = useState<number>(0);
   const router = useRouter();
   const handleContinue = () => {
@@ -89,6 +89,7 @@ export default function MoviesPage() {
               movie={movie}
               key={movieList.indexOf(movie)}
               addedmovies={addedmovies}
+              setAddedmovies={setAddedmovies}
               totalSelectedmovie={totalSelectedmovie}
               setTotalSelectedmovie={setTotalSelectedmovie}
             ></EachMovie>

@@ -7,11 +7,15 @@ import ButtonForRellTalk from "@/components/ui/ButtonForRellTalk";
 import { Button, Col, Flex, Row } from "antd";
 import TextArea from "antd/es/input/TextArea";
 import { Rowdies } from "next/font/google";
+import { redirect, useRouter } from "next/navigation";
 import React from "react";
-const onSubmit = (data: any) => {
-  console.log(data);
-};
+
 export default function ProfilePage() {
+  const route = useRouter();
+  const onSubmit = (data: any) => {
+    console.log(data);
+    route.push("/genre");
+  };
   return (
     <div
       style={{

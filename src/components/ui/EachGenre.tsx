@@ -5,7 +5,7 @@ type IGenre = {
   genre: string;
 
   addedGenres: string[];
-
+  setAddedGenres: Dispatch<SetStateAction<string[]>>;
   totalSelectedGenre: number;
   setTotalSelectedGenre: Dispatch<SetStateAction<number>>;
 };
@@ -14,6 +14,7 @@ export default function EachGenre({
   totalSelectedGenre,
   setTotalSelectedGenre,
   addedGenres,
+  setAddedGenres,
 }: IGenre) {
   const [select, setSelect] = useState<boolean>(true);
   console.log("select in outside:", select);
@@ -28,6 +29,7 @@ export default function EachGenre({
       event.target.style.backgroundColor = "#FFA724";
       setTotalSelectedGenre(totalSelectedGenre + 1);
       addedGenres.push(genre);
+      setAddedGenres(addedGenres);
     } else {
       // delete the item from the list
       //   1.get the index of the item in the list
@@ -36,6 +38,7 @@ export default function EachGenre({
       event.target.style.backgroundColor = "transparent";
       setTotalSelectedGenre(totalSelectedGenre - 1);
       addedGenres.splice(index, 1);
+      setAddedGenres(addedGenres);
     }
     console.log(addedGenres);
   };

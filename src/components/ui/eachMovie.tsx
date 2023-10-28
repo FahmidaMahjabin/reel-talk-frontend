@@ -10,6 +10,7 @@ type IMovieProps = {
   movie: IMovie;
 
   addedmovies: IMovie[];
+  setAddedmovies: Dispatch<SetStateAction<IMovie[]>>;
 
   totalSelectedmovie: number;
   setTotalSelectedmovie: Dispatch<SetStateAction<number>>;
@@ -17,6 +18,7 @@ type IMovieProps = {
 export default function EachMovie({
   movie,
   addedmovies,
+  setAddedmovies,
   totalSelectedmovie,
   setTotalSelectedmovie,
 }: IMovieProps) {
@@ -34,6 +36,7 @@ export default function EachMovie({
       setTotalSelectedmovie(totalSelectedmovie + 1);
       console.log("totalSelectedMovies:", totalSelectedmovie);
       addedmovies.push(movie);
+      setAddedmovies(addedmovies);
     } else {
       // delete the item from the list
       //   1.get the index of the item in the list
@@ -42,6 +45,7 @@ export default function EachMovie({
       event.target.style.border = " transparent";
       setTotalSelectedmovie(totalSelectedmovie - 1);
       addedmovies.splice(index, 1);
+      setAddedmovies(addedmovies);
     }
     console.log(addedmovies);
   };

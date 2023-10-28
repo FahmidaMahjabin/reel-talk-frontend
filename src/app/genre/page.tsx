@@ -22,7 +22,7 @@ export default function GenrePage() {
   // genre list will be fetched from backend .
 
   const genreList = ["Action", "Adventure", "Adult", "romantic"];
-  const addedGenres: string[] = [];
+  const [addedGenres, setAddedGenres] = useState<string[]>([]);
   const [totalSelectedGenre, setTotalSelectedGenre] = useState<number>(0);
   const router = useRouter();
   const handleContinue = () => {
@@ -49,6 +49,7 @@ export default function GenrePage() {
               genre={genre}
               key={genreList.indexOf(genre)}
               addedGenres={addedGenres}
+              setAddedGenres={setAddedGenres}
               totalSelectedGenre={totalSelectedGenre}
               setTotalSelectedGenre={setTotalSelectedGenre}
             ></EachGenre>
