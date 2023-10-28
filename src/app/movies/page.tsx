@@ -1,7 +1,7 @@
 "use client";
 
 import ButtonForRellTalk from "@/components/ui/ButtonForRellTalk";
-import EachMovie from "@/components/ui/eachMovie";
+import EachMovie, { IMovie } from "@/components/ui/eachMovie";
 
 import { Button, Col, Flex, Row } from "antd";
 
@@ -23,21 +23,55 @@ export default function MoviesPage() {
   // movie list will be fetched from backend .
 
   const movieList = [
-    "Action",
-    "Adventure",
-    "Adult",
-    "romantic",
-    "movie",
-    "movie2",
+    {
+      name: "action movie",
+      image: "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+    },
+    {
+      name: "action movie",
+      image: "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+    },
+    {
+      name: "action movie",
+      image: "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+    },
+    {
+      name: "action movie",
+      image: "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+    },
+    {
+      name: "action movie",
+      image: "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+    },
+    {
+      name: "action movie",
+      image: "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+    },
+    {
+      name: "action movie",
+      image: "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+    },
+    {
+      name: "action movie",
+      image: "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+    },
+    {
+      name: "action movie",
+      image: "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+    },
+    {
+      name: "action movie",
+      image: "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+    },
   ];
-  const addedmovies: string[] = [];
+  const addedmovies: IMovie[] = [];
   const [totalSelectedmovie, setTotalSelectedmovie] = useState<number>(0);
   const router = useRouter();
   const handleContinue = () => {
     router.push("/movies");
   };
   return (
-    <div style={{ backgroundColor: "#112a45", height: "100vh" }}>
+    <div style={{ backgroundColor: "#112a45", height: "100%vh" }}>
       <Flex gap="middle" justify="center" align="center" vertical>
         <h2 style={{ color: "white" }}>Select your top 5 movies</h2>
 

@@ -1,11 +1,15 @@
 import React, { Dispatch, SetStateAction, useState } from "react";
 import { Card, Col } from "antd";
-
+import { CheckCircleOutlined } from "@ant-design/icons";
 const { Meta } = Card;
-type IMovie = {
-  movie: string;
+export type IMovie = {
+  name: string;
+  image: string;
+};
+type IMovieProps = {
+  movie: IMovie;
 
-  addedmovies: string[];
+  addedmovies: IMovie[];
 
   totalSelectedmovie: number;
   setTotalSelectedmovie: Dispatch<SetStateAction<number>>;
@@ -15,7 +19,7 @@ export default function EachMovie({
   addedmovies,
   totalSelectedmovie,
   setTotalSelectedmovie,
-}: IMovie) {
+}: IMovieProps) {
   const [select, setSelect] = useState<boolean>(true);
   const selectMovie = (event: any) => {
     console.log(event.target);
@@ -25,15 +29,17 @@ export default function EachMovie({
     console.log("select:", select);
     console.log("movie:", movie);
     if (select) {
-      event.target.style.backgroundColor = "#FFA724";
+      event.target.style.border = "3px solid #FFA724";
+
       setTotalSelectedmovie(totalSelectedmovie + 1);
+      console.log("totalSelectedMovies:", totalSelectedmovie);
       addedmovies.push(movie);
     } else {
       // delete the item from the list
       //   1.get the index of the item in the list
       // 2.delete the item
       const index = addedmovies.indexOf(movie);
-      event.target.style.backgroundColor = "transparent";
+      event.target.style.border = " transparent";
       setTotalSelectedmovie(totalSelectedmovie - 1);
       addedmovies.splice(index, 1);
     }
@@ -45,14 +51,13 @@ export default function EachMovie({
       <Card
         hoverable
         onClick={selectMovie}
-        cover={
-          <img
-            alt="example"
-            src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-          />
-        }
+        cover={<img alt="example" src={movie.image} />}
+        // style={{ border: "2px solid #FFA724" }}
       >
-        <Meta title="Europe Street beat" description="www.instagram.com" />
+        <CheckCircleOutlined
+          style={{ position: "relative", top: "5px", left: "50px" }}
+        />
+        <Meta title={movie.name} />
       </Card>
     </Col>
   );

@@ -17,8 +17,9 @@ export default function ProfilePage() {
       style={{
         margin: "20px",
         backgroundColor: "#112a45",
-        color: "white",
         padding: "20px",
+        color: "white",
+        height: "100%vh",
       }}
     >
       <h2 style={{ marginBottom: "20px", textAlign: "center" }}>
@@ -65,7 +66,17 @@ export default function ProfilePage() {
           </Col>
         </Row>
         <Flex justify="center" align="center" style={{ margin: "20px" }}>
-          <ButtonForRellTalk name="Done"></ButtonForRellTalk>
+          <Button
+            style={{
+              backgroundColor: "#FFA724",
+              color: "white",
+            }}
+            block
+            htmlType="submit"
+            onClick={onSubmit}
+          >
+            Done
+          </Button>
         </Flex>
       </Form>
     </div>

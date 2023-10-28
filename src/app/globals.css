@@ -4,4 +4,8 @@
   margin: 0;
   padding: 0;
   font-family: "Young Serif", serif;
+  background-color: "#112a45";
+  color: "white";
+  height: "100%vh";
+  width: "100%vw";
 }
