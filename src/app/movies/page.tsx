@@ -83,7 +83,7 @@ export default function MoviesPage() {
           style={{ width: "50%", borderRadius: "50%" }}
         />
 
-        <Row gutter={[24, 24]}>
+        <Row gutter={[24, 24]} style={{ margin: "5px" }}>
           {movieList.map((movie) => (
             <EachMovie
               movie={movie}
