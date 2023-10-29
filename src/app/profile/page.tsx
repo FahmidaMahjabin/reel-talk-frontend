@@ -23,7 +23,7 @@ export default function ProfilePage() {
         backgroundColor: "#112a45",
         padding: "20px",
         color: "white",
-        height: "100%vh",
+        height: "100vh",
       }}
     >
       <h2 style={{ marginBottom: "20px", textAlign: "center" }}>
@@ -74,6 +74,7 @@ export default function ProfilePage() {
             style={{
               backgroundColor: "#FFA724",
               color: "white",
+              width: "50%",
             }}
             block
             htmlType="submit"

@@ -9,7 +9,7 @@
 <h3>Profile section</h3>
 <ul>
     <li>user will upload profile image, name, location, bio and birthday </li>
-    <li>After completing the all of the fields done button will be enabled. If any field is missing then done button will not be enabled.</li>
+    <li>While clicking the done button the submitted data will be stored.</li>
     <li>Done button will redirect to another page genre</li>
     <li>The form is created using react hook form </li>
 </ul>
