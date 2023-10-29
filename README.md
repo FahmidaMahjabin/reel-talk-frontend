@@ -1,4 +1,11 @@
 ##Reel Talk
+
+<p>To use the app clone the repository then install:</p>
+<ul>
+<li>npm i</li>
+<li>npm install antd --save</li>
+<li>npm run dev</li>
+</ul>
 #used Technologies:
 
 <ul>
